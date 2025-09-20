@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/7f8d4e4a2d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-book-open"></i> Study Planner</h1>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Calendar</a>
+      <a href="#">Progress</a>
+      <a href="#">Settings</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Task Form -->
+    <section class="task-form">
+      <h2><i class="fas fa-plus-circle"></i> Add / Edit Task</h2>
+      <form id="taskForm">
+        <input type="hidden" id="taskIndex">
+        <input type="text" id="title" placeholder="Task Title (e.g., Math Homework)" required>
+        <input type="text" id="subject" placeholder="Subject (e.g., Mathematics)" required>
+        <input type="date" id="dueDate" required>
+        <select id="priority">
+          <option value="High">High Priority</option>
+          <option value="Medium" selected>Medium Priority</option>
+          <option value="Low">Low Priority</option>
+        </select>
+        <textarea id="description" placeholder="Add details about your task..."></textarea>
+        <button type="submit">Save Task <i class="fas fa-save"></i></button>
+      </form>
+    </section>
+
+    <!-- Task List -->
+    <section class="task-list">
+      <h2><i class="fas fa-tasks"></i> Your Study Tasks</h2>
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="active">Active</button>
+        <button data-filter="completed">Completed</button>
+      </div>
+      <ul id="tasks"></ul>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <h3><i class="fas fa-chart-line"></i> Progress</h3>
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <p id="progressText">0% Completed</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Study Planner | Designed for Students 📚</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
